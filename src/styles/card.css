@@ -1,13 +1,12 @@
 
 
 .container {
-    width: 250px;
+    width: 400px;
     margin-left: auto;
     margin-right: auto;
 }
-.timerContainer {
+.flexContainer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 .minimap {
@@ -29,4 +28,18 @@
     to {
         background-position: left;
     }
+}
+
+#minimap-slide {
+  animation: slideOver 5s linear forwards;
+}
+
+@keyframes slideOver {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+
 }
