@@ -11,7 +11,7 @@ export const Card = (props) => {
             <div>
                 <div>
                     <p>{props.name}</p>
-                    <p>Grams</p>
+                    <p>Grams test</p>
                 </div>
                 <div>
 
