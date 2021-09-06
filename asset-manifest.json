@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/coffee-app-v2/static/css/main.a93a3e74.chunk.css",
+    "main.js": "/coffee-app-v2/static/js/main.a78e3c27.chunk.js",
+    "main.js.map": "/coffee-app-v2/static/js/main.a78e3c27.chunk.js.map",
+    "runtime-main.js": "/coffee-app-v2/static/js/runtime-main.da17c67f.js",
+    "runtime-main.js.map": "/coffee-app-v2/static/js/runtime-main.da17c67f.js.map",
+    "static/js/2.ce56cd79.chunk.js": "/coffee-app-v2/static/js/2.ce56cd79.chunk.js",
+    "static/js/2.ce56cd79.chunk.js.map": "/coffee-app-v2/static/js/2.ce56cd79.chunk.js.map",
+    "static/js/3.f0489557.chunk.js": "/coffee-app-v2/static/js/3.f0489557.chunk.js",
+    "static/js/3.f0489557.chunk.js.map": "/coffee-app-v2/static/js/3.f0489557.chunk.js.map",
+    "index.html": "/coffee-app-v2/index.html",
+    "static/css/main.a93a3e74.chunk.css.map": "/coffee-app-v2/static/css/main.a93a3e74.chunk.css.map",
+    "static/js/2.ce56cd79.chunk.js.LICENSE.txt": "/coffee-app-v2/static/js/2.ce56cd79.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.da17c67f.js",
+    "static/js/2.ce56cd79.chunk.js",
+    "static/css/main.a93a3e74.chunk.css",
+    "static/js/main.a78e3c27.chunk.js"
+  ]
+}
