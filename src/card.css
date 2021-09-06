@@ -1,0 +1,32 @@
+
+
+.container {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.timerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.minimap {
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: 100%;
+    height: 10px;
+    margin-left: 5px;
+    background-size: 200% 100% !important;
+    background-position: right !important;
+}
+.minimap-animation {
+    animation: minimap-fill 5s linear forwards;
+}
+
+
+@keyframes minimap-fill {
+
+    to {
+        background-position: left;
+    }
+}
