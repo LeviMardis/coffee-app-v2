@@ -18,17 +18,6 @@
     background-size: 200% 100% !important;
     background-position: right !important;
 }
-.minimap-animation {
-    animation: minimap-fill 5s linear forwards;
-}
-
-
-@keyframes minimap-fill {
-
-    to {
-        background-position: left;
-    }
-}
 
 #minimap-slide {
   animation: slideOver 5s linear forwards;
@@ -36,10 +25,10 @@
 
 @keyframes slideOver {
   from {
-    transform: translateX(0);
+    x: 0;
   }
   to {
-    transform: translateX(100%);
+    x: 100%;
   }
 
 }

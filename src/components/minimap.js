@@ -4,11 +4,11 @@ export const Minimap = (props) => {
   const ref = useRef();
   const [calcWidth, setCalcWidth] = useState(0);
   const [pixelPerSecond, setPixelPerSecond] = useState(0);
-  const [animate, setAnimate] = useState({animation: "none"})
+  const [animate, setAnimate] = useState({ animation: "none"})
 
   useEffect(() => {
     if (props.isActive) {
-      setAnimate({...animate, animation: `slideOver ${props.time}s linear forwards` })
+      setAnimate({...animate, animation: `slideOver 10s linear forwards` })
     } else {
       setAnimate({...animate, animation: "none"})
     }
@@ -48,7 +48,7 @@ export const Minimap = (props) => {
       <svg height="8px">
         <defs>
         <clipPath id="clip-path">
-          <rect style={animate} width="100%" height="100%" />
+          <rect style={animate} width="100%" height="100%"/>
         </clipPath>
         </defs>
         <g>

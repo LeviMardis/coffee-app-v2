@@ -24,6 +24,8 @@ export const Timer = (props) => {
       }, 1000);
     } else {
       clearInterval(interval);
+      setMinutes(Math.floor(time / 60))
+      setSeconds(time % 60)
     }
     return () => clearInterval(interval);
   }, [props.isActive, seconds, minutes]);
