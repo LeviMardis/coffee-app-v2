@@ -8,7 +8,7 @@ export const Minimap = (props) => {
 
   useEffect(() => {
     if (props.isActive) {
-      setAnimate({...animate, animation: `slideOver 10s linear forwards` })
+      setAnimate({...animate, animation: `slideOver ${props.time}s linear forwards` })
     } else {
       setAnimate({...animate, animation: "none"})
     }

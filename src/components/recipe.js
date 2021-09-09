@@ -2,7 +2,8 @@ import React from "react";
 import { Minimap } from "./minimap";
 
 export const Recipe = (props) => {
- const points = [10, 40, 80, 150]
+    const points = Object.keys(props.recipe)
+    
 
     return (
         <div>

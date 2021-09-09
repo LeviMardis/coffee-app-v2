@@ -4,7 +4,7 @@ import { Card } from "./components/card.js";
 
 function App() {
   let cards = data.map((item, index) => {
-    return <Card time={item.brewTime} color={item.color} name={item.brewType} key={index} />;
+    return <Card data={item} key={index} z={index + 1} />;
   });
 
   return <>{cards}</>;

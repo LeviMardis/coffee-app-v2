@@ -28,7 +28,7 @@ export const Timer = (props) => {
       setSeconds(time % 60)
     }
     return () => clearInterval(interval);
-  }, [props.isActive, seconds, minutes]);
+  }, [props.isActive, seconds, minutes, time]);
 
   return (
 
