@@ -11,7 +11,7 @@ export const Card = (props) => {
     const [scrollPosition, setScrollPosition] = useState(0)
   const [openClose, setOpenClose] = useState({
     borderColor: props.data.color,
-    height: 150,
+    height: 100,
     marginBottom: -50,
     zIndex: props.z,
   });
@@ -26,14 +26,14 @@ export const Card = (props) => {
   const handleOpenClose = () => {
     if (isOpen) {
       setIsOpen(!isOpen);
-        setOpenClose({ ...openClose, marginBottom: -50, height: 150 }); //close card
+        setOpenClose({ ...openClose, marginBottom: -50, height: 100 }); //close card
     } else {
         setIsOpen(!isOpen);
         setOpenClose({ ...openClose, marginBottom: 0, height: "99.4vh" }); //open card
         setScrollPosition(cardRef.current.getBoundingClientRect().top);
     }
   };
-    
+
     useEffect(() => {
         if (isOpen) {
             cardRef.current.scrollIntoView(true);
@@ -44,7 +44,7 @@ export const Card = (props) => {
 
   return (
       <div ref={cardRef} className="cardContainer" style={openClose}>
-      <div onClick={handleOpenClose}>test</div>
+      <h1 className="accentcolor" onClick={handleOpenClose}>RECIPE TITLE</h1>
       <div className="container">
         <Selector
           coffee={props.data.settings[0]}

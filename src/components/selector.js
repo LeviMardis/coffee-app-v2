@@ -53,7 +53,7 @@ export const Selector = (props) => {
     <>
       <div>
         <div>
-          <p>Coffee</p>
+          <h2 className="accentcolor">COFFEE</h2>
         </div>
         <div
           onTouchStart={setStart}
@@ -90,7 +90,7 @@ export const Selector = (props) => {
       </div>
       <div>
         <div>
-          <p>Ratio</p>
+          <h2 className="accentcolor">RATIO</h2>
         </div>
         <div
           onTouchStart={setStart}
@@ -126,7 +126,7 @@ export const Selector = (props) => {
       </div>
       <div>
         <div>
-          <p>Water</p>
+          <h2 className="accentcolor">WATER</h2>
         </div>
         <div onTouchStart={setStart} onTouchMove={changeCoffee}>
           <svg id="waterL" width="6" height="18" onTouchStart={handleClick}>
