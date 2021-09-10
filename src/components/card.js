@@ -3,6 +3,7 @@ import { Timer } from "./timer.js";
 import { Recipe } from "./recipe.js";
 import { Selector } from "./selector.js";
 import "../styles/card.css";
+import icon from "../images/Right.svg"
 
 export const Card = (props) => {
   const cardRef = useRef(null);
@@ -11,7 +12,8 @@ export const Card = (props) => {
     height: 100,
     marginBottom: -50,
     zIndex: props.index,
-    display: "block"
+    display: "block",
+    borderColor: props.data.color
   });
   let currentHeight = window.innerHeight - 24
 
@@ -39,9 +41,10 @@ export const Card = (props) => {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.currentIndex]);
-
+console.log(props.data.icon)
   return (
     <div ref={cardRef} className="cardContainer" style={cardStyle}>
+      <img src={icon} alt="" />
       <h1 style={{ color: props.data.color }} onClick={handleToggle}>
         {props.data.brewType}
       </h1>
