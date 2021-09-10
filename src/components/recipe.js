@@ -8,7 +8,7 @@ export const Recipe = (props) => {
     return (
         <div>
             <div className="flexContainer">
-                <h2 className="accentcolor">RECIPE</h2><Minimap color={props.color} time={props.time} points={points} isActive={props.isActive} />
+                <h2 style={{color:props.color}}>RECIPE</h2><Minimap color={props.color} time={props.time} points={points} isActive={props.isActive} />
             </div>
             <div>
 

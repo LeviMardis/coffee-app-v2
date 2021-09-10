@@ -11,7 +11,8 @@ export const Card = (props) => {
     height: 100,
     marginBottom: -50,
     zIndex: props.index,
-    display: "block"
+    display: "block",
+    borderColor: props.data.color
   });
   let currentHeight = window.innerHeight - 24
 
@@ -42,6 +43,7 @@ export const Card = (props) => {
 
   return (
     <div ref={cardRef} className="cardContainer" style={cardStyle}>
+    <img src={props.data.icon}/>
       <h1 style={{ color: props.data.color }} onClick={handleToggle}>
         {props.data.brewType}
       </h1>
