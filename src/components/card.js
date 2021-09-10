@@ -44,7 +44,11 @@ export const Card = (props) => {
 console.log(props.data.icon)
   return (
     <div ref={cardRef} className="cardContainer" style={cardStyle}>
+<<<<<<< HEAD
       <img src={icon} alt="" />
+=======
+    <img src={props.data.icon}/>
+>>>>>>> 00e94b3793cb8f337afe3ebf0645ba889f8219ed
       <h1 style={{ color: props.data.color }} onClick={handleToggle}>
         {props.data.brewType}
       </h1>

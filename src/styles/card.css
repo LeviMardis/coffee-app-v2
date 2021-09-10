@@ -3,9 +3,14 @@
 
   --dark: #0e0f12;
   --medium: #13171f;
+<<<<<<< HEAD
   --light: #313a53;
   --lighter: #4c5980;
 
+=======
+  --light: #2A3147;
+  --lighter: #556490;
+>>>>>>> 00e94b3793cb8f337afe3ebf0645ba889f8219ed
 }
 
 body {
@@ -23,8 +28,10 @@ body {
 }
 h1 {
   font-size: 20px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-weight: normal;
+  display: inline-block;
+  margin: 0px 0px 12px 20px;
 }
 H2 {
   font-size: 16px;
@@ -32,81 +39,8 @@ H2 {
   font-weight: normal;
 }
 
-.cardContainer:nth-child(1) {
-  border-color: var(--spectrum1);
-}
-.cardContainer:nth-child(1) .accentcolor {
-  color: var(--spectrum1);
-}
-.cardContainer:nth-child(2) {
-  border-color: var(--spectrum2);
-}
-.cardContainer:nth-child(2) .accentcolor {
-  color: var(--spectrum2);
-}
-.cardContainer:nth-child(3) {
-  border-color: var(--spectrum3);
-}
-.cardContainer:nth-child(3) .accentcolor {
-  color: var(--spectrum3);
-}
-.cardContainer:nth-child(4) {
-  border-color: var(--spectrum4);
-}
-.cardContainer:nth-child(4) .accentcolor {
-  color: var(--spectrum4);
-}
-.cardContainer:nth-child(5) {
-  border-color: var(--spectrum5);
-}
-.cardContainer:nth-child(5) .accentcolor {
-  color: var(--spectrum5);
-}
-.cardContainer:nth-child(6) {
-  border-color: var(--spectrum6);
-}
-.cardContainer:nth-child(6) .accentcolor {
-  color: var(--spectrum6);
-}
-.cardContainer:nth-child(7) {
-  border-color: var(--spectrum7);
-}
-.cardContainer:nth-child(7) .accentcolor {
-  color: var(--spectrum7);
-}
-.cardContainer:nth-child(8) {
-  border-color: var(--spectrum8);
-}
-.cardContainer:nth-child(8) .accentcolor {
-  color: var(--spectrum8);
-}
-.cardContainer:nth-child(9) {
-  border-color: var(--spectrum9);
-}
-.cardContainer:nth-child(9) .accentcolor {
-  color: var(--spectrum9);
-}
-.cardContainer:nth-child(10) {
-  border-color: var(--spectrum10);
-}
-.cardContainer:nth-child(10) .accentcolor {
-  color: var(--spectrum10);
-}
-.cardContainer:nth-child(11) {
-  border-color: var(--spectrum11);
-}
-.cardContainer:nth-child(11) .accentcolor {
-  color: var(--spectrum11);
-}
-.cardContainer:nth-child(12) {
-  border-color: var(--spectrum12);
-}
-.cardContainer:nth-child(12) .accentcolor {
-  color: var(--spectrum12);
-}
-
 .cardContainer {
-  background-color: var(--dark);
+  background-color: var(--medium);
   border: 2px solid;
   border-radius: 20px;
   overflow-y: hidden;
@@ -115,6 +49,11 @@ H2 {
   padding: 10px 20px;
   transition: 0.2s linear;
 }
+
+.cardContainer img {
+  margin-top: 10px;
+}
+
 .container {
   width: 100%;
 }
