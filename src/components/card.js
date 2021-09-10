@@ -5,17 +5,15 @@ import { Selector } from "./selector.js";
 import "../styles/card.css";
 
 export const Card = (props) => {
-    const cardRef = useRef(null)
+  const cardRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
-    const [scrollPosition, setScrollPosition] = useState(0)
-  const [openClose, setOpenClose] = useState({
-    borderColor: props.data.color,
+  const [cardStyle, setCardStyle] = useState({
     height: 100,
     marginBottom: -50,
-    zIndex: props.z,
+    zIndex: props.index,
+    display: "block"
   });
-
+  let currentHeight = window.innerHeight - 24
 
   const handleStart = () => {
     setIsActive(true);
@@ -23,32 +21,35 @@ export const Card = (props) => {
   const handleReset = () => {
     setIsActive(false);
   };
-  const handleOpenClose = () => {
-    if (isOpen) {
-      setIsOpen(!isOpen);
-        setOpenClose({ ...openClose, marginBottom: -50, height: 100 }); //close card
-    } else {
-        setIsOpen(!isOpen);
-        setOpenClose({ ...openClose, marginBottom: 0, height: "99.4vh" }); //open card
-        setScrollPosition(cardRef.current.getBoundingClientRect().top);
-    }
+  const handleToggle = () => {
+    props.toggle(props.index);
   };
 
-    useEffect(() => {
-        if (isOpen) {
-            cardRef.current.scrollIntoView(true);
-        } else {
-        window.scrollBy(0, -104)
-        }
-    }, [isOpen])
+  useEffect(() => {
+    if (props.currentIndex === props.index) {
+      setCardStyle({ ...cardStyle, height: currentHeight, marginBottom: 0 });
+    } else if (props.currentIndex === null) {
+      setCardStyle({ ...cardStyle, display: "block", height: 100, marginBottom: -50 });
+    } else if (props.currentIndex > props.index) {
+      setCardStyle({...cardStyle, marginBottom: -124 });
+    } else {
+      // setTimeout(() => {
+      //   setCardStyle({...cardStyle, display: "none"})
+      // }, 300)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.currentIndex]);
 
   return (
-      <div ref={cardRef} className="cardContainer" style={openClose}>
-      <h1 className="accentcolor" onClick={handleOpenClose}>RECIPE TITLE</h1>
+    <div ref={cardRef} className="cardContainer" style={cardStyle}>
+      <h1 style={{ color: props.data.color }} onClick={handleToggle}>
+        {props.data.brewType}
+      </h1>
       <div className="container">
         <Selector
           coffee={props.data.settings[0]}
           ratio={props.data.settings[1]}
+          color={props.data.color}
         />
         <Timer
           time={props.data.brewTime}

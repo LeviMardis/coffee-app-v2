@@ -14,6 +14,7 @@ export const Minimap = (props) => {
     }
     setCalcWidth(ref.current.offsetWidth);
     setPixelPerSecond(calcWidth / props.time);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [calcWidth, pixelPerSecond, props.isActive]);
 
   const circlesOverlay = props.points.map((point, index) => {

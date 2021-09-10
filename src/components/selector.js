@@ -51,15 +51,15 @@ export const Selector = (props) => {
   };
   return (
     <>
-      <div>
+      <div className="flexContainer">
         <div>
-          <h2 className="accentcolor">COFFEE</h2>
+          <h2 style={{ color: props.color }}>COFFEE</h2>
         </div>
         <div
           onTouchStart={setStart}
           onTouchMove={changeCoffee}
           onTouchEnd={touchEnd}
-          className="flexContainer"
+          className="flexContainer2"
         >
           <svg id="coffeeL" width="6" height="18" onClick={handleClick}>
             <path
@@ -69,7 +69,7 @@ export const Selector = (props) => {
           </svg>
           {coffee <= 1 ? (
             <>
-              <p></p>
+              <p> </p>
               <p>1</p>
               <p>2</p>
             </>
@@ -88,14 +88,15 @@ export const Selector = (props) => {
           </svg>
         </div>
       </div>
-      <div>
+      <div className="flexContainer">
         <div>
-          <h2 className="accentcolor">RATIO</h2>
+          <h2 style={{ color: props.color }}>RATIO</h2>
         </div>
         <div
           onTouchStart={setStart}
           onTouchMove={changeRatio}
           onTouchEnd={touchEnd}
+          className="flexContainer2"
         >
           <svg id="ratioL" width="6" height="18" onTouchStart={handleClick}>
             <path
@@ -105,7 +106,7 @@ export const Selector = (props) => {
           </svg>
           {ratio <= 1 ? (
             <>
-              <p></p>
+              <p> </p>
               <p>1:1</p>
               <p>1:2</p>
             </>
@@ -124,11 +125,16 @@ export const Selector = (props) => {
           </svg>
         </div>
       </div>
-      <div>
+      <div className="flexContainer">
         <div>
-          <h2 className="accentcolor">WATER</h2>
+          <h2 style={{ color: props.color }}>WATER</h2>
         </div>
-        <div onTouchStart={setStart} onTouchMove={changeCoffee}>
+        <div
+          onTouchStart={setStart}
+          onTouchMove={changeCoffee}
+          onTouchEnd={touchEnd}
+          className="flexContainer2"
+        >
           <svg id="waterL" width="6" height="18" onTouchStart={handleClick}>
             <path
               d="M3.71831 17.3539C3.8994 17.7476 4.30986 18 4.74447 18C5.45674 18 6 17.5659 6 16.9703C6 16.6674 5.79477 16.2737 5.67404 16.0112L2.37827 8.99495L5.67404 1.97869C5.79477 1.71621 6 1.31239 6 1.01963C6 0.4341 5.45674 0 4.74447 0C4.30986 0 3.8994 0.242288 3.71831 0.636007L0.482897 7.52103C0.265594 7.98542 0 8.55076 0 8.99495C0 9.43915 0.265594 10.0045 0.482897 10.4689L3.71831 17.3539Z"
@@ -137,7 +143,7 @@ export const Selector = (props) => {
           </svg>
           {coffee <= 1 ? (
             <>
-              <p></p>
+              <p> </p>
               <p>{ratio}</p>
               <p>{ratio * 2}</p>
             </>
