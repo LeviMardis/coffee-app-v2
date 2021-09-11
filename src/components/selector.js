@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/card.css";
 const left = require("../images/left.svg").default;
 const right = require("../images/right.svg").default;
@@ -10,17 +10,18 @@ export const Selector = (props) => {
   const [xmove, setXmove] = useState(0);
   const [coffee, setCoffee] = useState(props.coffee);
   const [ratio, setRatio] = useState(props.ratio);
+  //const [lock, setLock] = useState({margin: "20px 0px"})
 
   const setStart = (event) => {
     setXdown(event.touches[0].clientX);
   };
   const changeCoffee = (event) => {
     setXmove(Math.trunc((event.touches[0].clientX - xdown) / 20) * -1);
-    setCoffee(coffee < 1 ? 1 : coffeeSave + xmove);
+    setCoffee(coffee < 1 ? 1 : coffee > 99 ? 100 : coffeeSave + xmove);
   };
   const changeRatio = (event) => {
     setXmove(Math.trunc((event.touches[0].clientX - xdown) / 40) * -1);
-    setRatio(ratio < 1 ? 1 : ratioSave + xmove);
+    setRatio(ratio < 1 ? 1 : ratio > 20 ? 20 : ratioSave + xmove);
   };
   const touchEnd = () => {
     setCoffeeSave(coffee < 1 ? 1 : coffee);
@@ -51,6 +52,14 @@ export const Selector = (props) => {
         break;
     }
   };
+
+  // useEffect(() => {
+  //   if (props.isActive) {
+  //     setLock({margin: "5px 0px"})
+  //   } else {
+  //     setLock({margin: "20px 0px"})
+  //   }
+  // }, [props.isActive])
   return (
     <>
       <div className="flexContainer">
@@ -62,26 +71,41 @@ export const Selector = (props) => {
           onTouchMove={changeCoffee}
           onTouchEnd={touchEnd}
           className="selector"
+          style={props.lock[2]}
         >
-          <img src={left} alt="" onClick={handleClick} id="coffeeL" />
+          <img
+            src={left}
+            alt=""
+            onClick={handleClick}
+            id="coffeeL"
+            style={props.lock[3]}
+          />
           {coffee <= 1 ? (
             <>
-              <p> </p>
-              <p>1</p>
-              <p>2</p>
+              <p>&nbsp;</p>
+              <p style={props.lock[0]}>1</p>
+              <p style={props.lock[1]}>2</p>
             </>
           ) : coffee >= 100 ? (
-              <>
-                
-              </>
+            <>
+              <p style={props.lock[1]}>99</p>
+              <p style={props.lock[0]}>100</p>
+              <p>&nbsp;</p>
+            </>
           ) : (
             <>
-              <p>{coffee - 1}</p>
-              <p>{coffee}</p>
-              <p>{coffee + 1}</p>
+              <p style={props.lock[1]}>{coffee - 1}</p>
+              <p style={props.lock[0]}>{coffee}</p>
+              <p style={props.lock[1]}>{coffee + 1}</p>
             </>
           )}
-          <img src={right} alt="" id="coffeeR" onTouchStart={handleClick} />
+          <img
+            src={right}
+            alt=""
+            id="coffeeR"
+            onTouchStart={handleClick}
+            style={props.lock[3]}
+          />
         </div>
       </div>
       <div className="flexContainer">
@@ -93,22 +117,41 @@ export const Selector = (props) => {
           onTouchMove={changeRatio}
           onTouchEnd={touchEnd}
           className="selector"
+          style={props.lock[2]}
         >
-          <img src={left} alt="" id="ratioL" onTouchStart={handleClick} />
+          <img
+            src={left}
+            alt=""
+            id="ratioL"
+            onTouchStart={handleClick}
+            style={props.lock[3]}
+          />
           {ratio <= 1 ? (
             <>
-              <p> </p>
-              <p>1:1</p>
-              <p>1:2</p>
+              <p>&nbsp;</p>
+              <p style={props.lock[0]}>1:1</p>
+              <p style={props.lock[1]}>1:2</p>
+            </>
+          ) : ratio >= 20 ? (
+            <>
+              <p style={props.lock[1]}>1:19</p>
+              <p style={props.lock[0]}>1:20</p>
+              <p>&nbsp;</p>
             </>
           ) : (
             <>
-              <p>1:{ratio - 1}</p>
-              <p>1:{ratio}</p>
-              <p>1:{ratio + 1}</p>
+              <p style={props.lock[1]}>1:{ratio - 1}</p>
+              <p style={props.lock[0]}>1:{ratio}</p>
+              <p style={props.lock[1]}>1:{ratio + 1}</p>
             </>
           )}
-          <img src={right} alt="" id="ratioR" onTouchStart={handleClick} />
+          <img
+            src={right}
+            alt=""
+            id="ratioR"
+            onTouchStart={handleClick}
+            style={props.lock[3]}
+          />
         </div>
       </div>
       <div className="flexContainer">
@@ -120,22 +163,41 @@ export const Selector = (props) => {
           onTouchMove={changeCoffee}
           onTouchEnd={touchEnd}
           className="selector"
+          style={props.lock[2]}
         >
-          <img src={left} alt="" id="waterL" onTouchStart={handleClick} />
+          <img
+            src={left}
+            alt=""
+            id="waterL"
+            onTouchStart={handleClick}
+            style={props.lock[3]}
+          />
           {coffee <= 1 ? (
             <>
-              <p> </p>
-              <p>{ratio}</p>
-              <p>{ratio * 2}</p>
+              <p>&nbsp;</p>
+              <p style={props.lock[0]}>{ratio}</p>
+              <p style={props.lock[1]}>{ratio * 2}</p>
+            </>
+          ) : coffee >= 100 ? (
+            <>
+              <p style={props.lock[1]}>{ratio * (coffee - 1)}</p>
+              <p style={props.lock[0]}>{ratio * coffee}</p>
+              <p>&nbsp;</p>
             </>
           ) : (
             <>
-              <p>{(coffee - 1) * ratio}</p>
-              <p>{coffee * ratio}</p>
-              <p>{(coffee + 1) * ratio}</p>
+              <p style={props.lock[1]}>{(coffee - 1) * ratio}</p>
+              <p style={props.lock[0]}>{coffee * ratio}</p>
+              <p style={props.lock[1]}>{(coffee + 1) * ratio}</p>
             </>
           )}
-          <img src={right} alt="" id="waterR" onTouchStart={handleClick} />
+          <img
+            src={right}
+            alt=""
+            id="waterR"
+            onTouchStart={handleClick}
+            style={props.lock[3]}
+          />
         </div>
       </div>
     </>

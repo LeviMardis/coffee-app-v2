@@ -32,7 +32,7 @@ export const Timer = (props) => {
 
   return (
 
-      <div className="flexContainer">
+      <div className="flexContainer" style={{marginTop: '10px'}}>
         <h2 style={{color:props.color}}>TIMER</h2>
         <div className="flexContainer3">
           0{minutes}:{seconds < 10 ? "0" + seconds : seconds}

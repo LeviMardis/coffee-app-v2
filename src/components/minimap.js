@@ -14,6 +14,7 @@ export const Minimap = (props) => {
     }
     setCalcWidth(ref.current.offsetWidth);
     setPixelPerSecond(calcWidth / props.time);
+    console.log(calcWidth);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [calcWidth, pixelPerSecond, props.isActive]);
 
@@ -45,11 +46,11 @@ export const Minimap = (props) => {
   });
 
   return (
-    <div ref={ref} className="flexContainer2">
-      <svg height="8px">
+    <div ref={ref} style={{width: "60%"}}>
+      <svg height="8px" width={calcWidth}>
         <defs>
         <clipPath id="clip-path">
-          <rect style={animate} width="100%" height="100%"/>
+          <rect style={animate} width={calcWidth} height="100%"/>
         </clipPath>
         </defs>
         <g>

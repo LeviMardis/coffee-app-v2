@@ -14,6 +14,21 @@ export const Card = (props) => {
     display: "block",
     borderColor: props.data.color
   });
+  const [lock, setLock] = useState(
+    [{
+      color: "#DED9D3"
+    },
+      {
+      color: "#2A3147"
+      },
+      {
+        margin: "20px 0px"
+      },
+      {
+        opacity: '100%'
+      }
+    ]
+  )
   let currentHeight = window.innerHeight - 24
 
   const handleStart = () => {
@@ -40,7 +55,40 @@ export const Card = (props) => {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.currentIndex]);
-  console.log(props.data.icon)
+
+  useEffect(() => {
+    if (isActive) { // ACTIVE
+      setLock([
+        {
+          color: "#2A3147",
+        },
+        {
+          color: "#13171F",
+        },
+        {
+          margin: "2px 0px"
+        },
+        {
+          opacity: "0%"
+        }
+      ]);
+    } else { // NOT ACTIVE
+      setLock([
+        {
+          color: "#DED9D3",
+        },
+        {
+          color: "#2A3147",
+        },
+        {
+          margin: "20px 0px"
+        },
+        {
+          opacity: '100%'
+        }
+      ]);
+    }
+  }, [isActive])
   return (
     <div ref={cardRef} className="cardContainer" style={cardStyle}>
       <div onClick={handleToggle}>
@@ -53,6 +101,8 @@ export const Card = (props) => {
           ratio={props.data.settings[1]}
           color={props.data.color}
           left={props.data.left}
+          isActive={isActive}
+          lock={lock}
         />
         <Timer
           time={props.data.brewTime}
