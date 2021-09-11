@@ -41,7 +41,7 @@ H2 {
   overflow: hidden;
   position: relative;
   top: 0;
-  padding: 10px 20px;
+  padding: 24px 36px;
   transition: 0.2s linear;
 }
 .container {
@@ -52,19 +52,12 @@ H2 {
   align-items: center;
   justify-content: space-between;
 }
-.flexContainer2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 60%;
-}
-.flexContainer3 {
+.flexContainerTimer {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 60%;
 }
-
 .selector {
   display: flex;
   align-items: center;
@@ -79,6 +72,18 @@ H2 {
 .selector img {
   transition: all .2s linear;
 }
+.selector p:nth-child(3)  {
+  color: var(--white);
+}
+button {
+  width: 60px;
+  height: 60px;
+  font: inherit;
+  border: 2px solid;
+  border-radius: 10px;
+  background: none;
+}
+
 
 #minimap-slide {
   animation: slideOver 5s linear forwards;
