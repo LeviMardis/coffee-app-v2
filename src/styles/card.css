@@ -41,7 +41,7 @@ H2 {
   overflow: hidden;
   position: relative;
   top: 0;
-  padding: 24px 36px;
+  padding: 34px 36px;
   transition: 0.2s linear;
 }
 .container {
@@ -82,7 +82,13 @@ button {
   border: 2px solid;
   border-radius: 10px;
   background: none;
+  transition: background .2s ease;
 }
+button:active{
+  background: var(--white);
+  color: var(--medium);
+}
+
 
 
 #minimap-slide {
