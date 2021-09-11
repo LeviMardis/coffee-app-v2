@@ -45,7 +45,7 @@ export const Minimap = (props) => {
   });
 
   return (
-    <div ref={ref} className="flexContainer2">
+    <div ref={ref}>
       <svg height="8px">
         <defs>
         <clipPath id="clip-path">

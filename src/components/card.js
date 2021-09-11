@@ -65,8 +65,8 @@ export const Card = (props) => {
           isActive={isActive}
           recipe={props.data.recipe}
         />
-        <button onClick={handleStart}>start</button>
-        <button onClick={handleReset}>reset</button>
+        <button style={{ color: props.data.color, borderColor: props.data.color}} onClick={handleStart}>S</button>
+        <button style={{ color: props.data.color, borderColor: props.data.color}} onClick={handleReset}>R</button>
       </div>
     </div>
   );
