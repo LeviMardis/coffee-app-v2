@@ -16,9 +16,6 @@ export const Card = (props) => {
   });
   const [lock, setLock] = useState(
     [{
-      color: "#DED9D3"
-    },
-      {
       color: "#2A3147"
       },
       {
@@ -60,9 +57,6 @@ export const Card = (props) => {
     if (isActive) { // ACTIVE
       setLock([
         {
-          color: "#2A3147",
-        },
-        {
           color: "#13171F",
         },
         {
@@ -74,9 +68,6 @@ export const Card = (props) => {
       ]);
     } else { // NOT ACTIVE
       setLock([
-        {
-          color: "#DED9D3",
-        },
         {
           color: "#2A3147",
         },

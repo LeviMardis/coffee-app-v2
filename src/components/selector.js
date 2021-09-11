@@ -71,32 +71,32 @@ export const Selector = (props) => {
           onTouchMove={changeCoffee}
           onTouchEnd={touchEnd}
           className="selector"
-          style={props.lock[2]}
+          style={props.lock[1]}
         >
           <img
             src={left}
             alt=""
             onClick={handleClick}
             id="coffeeL"
-            style={props.lock[3]}
+            style={props.lock[2]}
           />
           {coffee <= 1 ? (
             <>
               <p>&nbsp;</p>
-              <p style={props.lock[0]}>1</p>
-              <p style={props.lock[1]}>2</p>
+              <p style={{color: "#ded9d3"}}>1</p>
+              <p style={props.lock[0]}>2</p>
             </>
           ) : coffee >= 100 ? (
             <>
-              <p style={props.lock[1]}>99</p>
-              <p style={props.lock[0]}>100</p>
+              <p style={props.lock[0]}>99</p>
+              <p style={{color: "#ded9d3"}}>100</p>
               <p>&nbsp;</p>
             </>
           ) : (
             <>
-              <p style={props.lock[1]}>{coffee - 1}</p>
-              <p style={props.lock[0]}>{coffee}</p>
-              <p style={props.lock[1]}>{coffee + 1}</p>
+              <p style={props.lock[0]}>{coffee - 1}</p>
+              <p style={{color: "#ded9d3"}}>{coffee}</p>
+              <p style={props.lock[0]}>{coffee + 1}</p>
             </>
           )}
           <img
@@ -104,7 +104,7 @@ export const Selector = (props) => {
             alt=""
             id="coffeeR"
             onTouchStart={handleClick}
-            style={props.lock[3]}
+            style={props.lock[2]}
           />
         </div>
       </div>
@@ -117,32 +117,32 @@ export const Selector = (props) => {
           onTouchMove={changeRatio}
           onTouchEnd={touchEnd}
           className="selector"
-          style={props.lock[2]}
+          style={props.lock[1]}
         >
           <img
             src={left}
             alt=""
             id="ratioL"
             onTouchStart={handleClick}
-            style={props.lock[3]}
+            style={props.lock[2]}
           />
           {ratio <= 1 ? (
             <>
               <p>&nbsp;</p>
-              <p style={props.lock[0]}>1:1</p>
-              <p style={props.lock[1]}>1:2</p>
+              <p style={{color: "#ded9d3"}}>1:1</p>
+              <p style={props.lock[0]}>1:2</p>
             </>
           ) : ratio >= 20 ? (
             <>
-              <p style={props.lock[1]}>1:19</p>
-              <p style={props.lock[0]}>1:20</p>
+              <p style={props.lock[0]}>1:19</p>
+              <p style={{color: "#ded9d3"}}>1:20</p>
               <p>&nbsp;</p>
             </>
           ) : (
             <>
-              <p style={props.lock[1]}>1:{ratio - 1}</p>
-              <p style={props.lock[0]}>1:{ratio}</p>
-              <p style={props.lock[1]}>1:{ratio + 1}</p>
+              <p style={props.lock[0]}>1:{ratio - 1}</p>
+              <p style={{color: "#ded9d3"}}>1:{ratio}</p>
+              <p style={props.lock[0]}>1:{ratio + 1}</p>
             </>
           )}
           <img
@@ -150,7 +150,7 @@ export const Selector = (props) => {
             alt=""
             id="ratioR"
             onTouchStart={handleClick}
-            style={props.lock[3]}
+            style={props.lock[2]}
           />
         </div>
       </div>
@@ -163,32 +163,32 @@ export const Selector = (props) => {
           onTouchMove={changeCoffee}
           onTouchEnd={touchEnd}
           className="selector"
-          style={props.lock[2]}
+          style={props.lock[1]}
         >
           <img
             src={left}
             alt=""
             id="waterL"
             onTouchStart={handleClick}
-            style={props.lock[3]}
+            style={props.lock[2]}
           />
           {coffee <= 1 ? (
             <>
               <p>&nbsp;</p>
-              <p style={props.lock[0]}>{ratio}</p>
-              <p style={props.lock[1]}>{ratio * 2}</p>
+              <p style={{color: "#ded9d3"}}>{ratio}</p>
+              <p style={props.lock[0]}>{ratio * 2}</p>
             </>
           ) : coffee >= 100 ? (
             <>
-              <p style={props.lock[1]}>{ratio * (coffee - 1)}</p>
-              <p style={props.lock[0]}>{ratio * coffee}</p>
+              <p style={props.lock[0]}>{ratio * (coffee - 1)}</p>
+              <p style={{color: "#ded9d3"}}>{ratio * coffee}</p>
               <p>&nbsp;</p>
             </>
           ) : (
             <>
-              <p style={props.lock[1]}>{(coffee - 1) * ratio}</p>
-              <p style={props.lock[0]}>{coffee * ratio}</p>
-              <p style={props.lock[1]}>{(coffee + 1) * ratio}</p>
+              <p style={props.lock[0]}>{(coffee - 1) * ratio}</p>
+              <p style={{color: "#ded9d3"}}>{coffee * ratio}</p>
+              <p style={props.lock[0]}>{(coffee + 1) * ratio}</p>
             </>
           )}
           <img
@@ -196,7 +196,7 @@ export const Selector = (props) => {
             alt=""
             id="waterR"
             onTouchStart={handleClick}
-            style={props.lock[3]}
+            style={props.lock[2]}
           />
         </div>
       </div>
