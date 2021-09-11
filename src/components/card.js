@@ -3,7 +3,6 @@ import { Timer } from "./timer.js";
 import { Recipe } from "./recipe.js";
 import { Selector } from "./selector.js";
 import "../styles/card.css";
-import icon from "../images/Right.svg"
 
 export const Card = (props) => {
   const cardRef = useRef(null);
@@ -41,22 +40,19 @@ export const Card = (props) => {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.currentIndex]);
-console.log(props.data.icon)
+  console.log(props.data.icon)
   return (
     <div ref={cardRef} className="cardContainer" style={cardStyle}>
-<<<<<<< HEAD
-      <img src={icon} alt="" />
-=======
-    <img src={props.data.icon}/>
->>>>>>> 00e94b3793cb8f337afe3ebf0645ba889f8219ed
-      <h1 style={{ color: props.data.color }} onClick={handleToggle}>
-        {props.data.brewType}
-      </h1>
+      <div onClick={handleToggle}>
+        <img src={props.data.icon} alt="" />
+        <h1 style={{ color: props.data.color }}>{props.data.brewType}</h1>
+      </div>
       <div className="container">
         <Selector
           coffee={props.data.settings[0]}
           ratio={props.data.settings[1]}
           color={props.data.color}
+          left={props.data.left}
         />
         <Timer
           time={props.data.brewTime}

@@ -1,7 +1,7 @@
 import { data } from "./data.js";
 import "./styles/App.css";
 import { Card } from "./components/card.js";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
