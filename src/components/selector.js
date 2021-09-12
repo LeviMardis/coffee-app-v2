@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/card.css";
 const left = require("../images/left.svg").default;
 const right = require("../images/right.svg").default;
@@ -53,13 +53,6 @@ export const Selector = (props) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (props.isActive) {
-  //     setLock({margin: "5px 0px"})
-  //   } else {
-  //     setLock({margin: "20px 0px"})
-  //   }
-  // }, [props.isActive])
   return (
     <>
       <div className="flexContainer">

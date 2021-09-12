@@ -7,6 +7,7 @@
   --lighter: #556490;
 }
 
+
 body {
   overflow-x: hidden;
   overflow-y: visible;
@@ -43,6 +44,9 @@ H2 {
   top: 0;
   padding: 24px 36px;
   transition: 0.2s linear;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
 }
 .container {
   width: 100%;
@@ -84,16 +88,40 @@ button {
   background: none;
 }
 
-
-#minimap-slide {
-  animation: slideOver 5s linear forwards;
+.minimapFill {
+  clip-path: inset(-1px 100% -1px -1px)
+}
+@keyframes minimapFill {  
+  0% {clip-path: inset(-1px 100% -1px -1px)}
+  100% {clip-path: inset(-1px)}
+}
+@keyframes minimapHide {  
+  0% {clip-path: inset(-1px)}
+  100% {clip-path: inset(-1px -1px -1px 100%)}
 }
 
-@keyframes slideOver {
-  from {
-    x: 0;
-  }
-  to {
-    x: 100%;
-  }
+
+input[type=range] {
+  -webkit-appearance: none;
+  pointer-events: none;
+  width: 100%;
+  background: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border-radius: 10px;
+  box-shadow:inset 0px 0px 0px 2px #4C5980;
+}
+input[type=range]::-webkit-slider-thumb {
+  border: 2px solid;
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+  background: url(../images/testicon.svg) no-repeat;
+  -webkit-appearance: none;
+  pointer-events: all;
+  transition: all .2s linear;
 }

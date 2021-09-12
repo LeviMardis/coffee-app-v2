@@ -4,17 +4,20 @@ export const Minimap = (props) => {
   const ref = useRef();
   const [calcWidth, setCalcWidth] = useState(0);
   const [pixelPerSecond, setPixelPerSecond] = useState(0);
-  const [animate, setAnimate] = useState({ animation: "none"})
+  const [animateFill, setAnimateFill] = useState({ animation: "none" })
+  const [animateHide, setAnimateHide] = useState({ animation: "none" });
 
+  
   useEffect(() => {
     if (props.isActive) {
-      setAnimate({...animate, animation: `slideOver ${props.time}s linear forwards` })
+      setAnimateFill({ animation: `minimapFill ${props.time}s linear forwards` })
+      setAnimateHide({ animation: `minimapHide ${props.time}s linear forwards` });
     } else {
-      setAnimate({...animate, animation: "none"})
+      setAnimateFill({ animation: "none" });
+      setAnimateHide({ animation: "none" });
     }
     setCalcWidth(ref.current.offsetWidth);
     setPixelPerSecond(calcWidth / props.time);
-    console.log(calcWidth);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [calcWidth, pixelPerSecond, props.isActive]);
 
@@ -22,7 +25,7 @@ export const Minimap = (props) => {
     return (
       <circle
         cx={Math.floor(point * pixelPerSecond)}
-        cy="4"
+        cy="5"
         r="3"
         stroke="#4C5980"
         strokeWidth="2"
@@ -35,57 +38,24 @@ export const Minimap = (props) => {
     return (
       <circle
         cx={Math.floor(point * pixelPerSecond)}
-        cy="4"
+        cy="5"
         r="3"
         stroke={props.color}
         strokeWidth="2"
-        fill={props.color}
+        fill="#0E0F12"
         key={index}
       />
     );
   });
 
   return (
-    <div ref={ref} style={{width: "60%"}}>
-      <svg height="8px" width={calcWidth}>
-        <defs>
-        <clipPath id="clip-path">
-          <rect style={animate} width={calcWidth} height="100%"/>
-        </clipPath>
-        </defs>
-        <g>
-          <path
-            d={`m0 4 H ${calcWidth}`}
-            stroke={props.color}
-            strokeWidth="2"
-          />
+    <div ref={ref} style={{ width: "60%" }}>
+      <svg height="10px" width={calcWidth}>
+        <g style={animateHide}>
+          <path d={`m0 5 H ${calcWidth}`} stroke="#4C5980" strokeWidth="2" />
           <circle
             cx="4"
-            cy="4"
-            r="3"
-            stroke={props.color}
-            strokeWidth="2"
-            fill={props.color}
-          />
-          <circle
-            cx={calcWidth - 4}
-            cy="4"
-            r="3"
-            stroke={props.color}
-            strokeWidth="2"
-            fill={props.color}
-          />
-          {circlesBase}
-        </g>
-        <g clipPath="url(#clip-path)">
-          <path
-            d={`m0 4 H ${calcWidth}`}
-            stroke="#4C5980"
-            strokeWidth="2"
-          />
-          <circle
-            cx="4"
-            cy="4"
+            cy="5"
             r="3"
             stroke="#4C5980"
             strokeWidth="2"
@@ -93,13 +63,37 @@ export const Minimap = (props) => {
           />
           <circle
             cx={calcWidth - 4}
-            cy="4"
+            cy="5"
             r="3"
             stroke="#4C5980"
             strokeWidth="2"
             fill="#0E0F12"
           />
           {circlesOverlay}
+        </g>
+        <g className="minimapFill" style={animateFill}>
+          <path
+            d={`m0 5 H ${calcWidth}`}
+            stroke={props.color}
+            strokeWidth="2"
+          />
+          <circle
+            cx="4"
+            cy="5"
+            r="3"
+            stroke={props.color}
+            strokeWidth="2"
+            fill={props.color}
+          />
+          <circle
+            cx={calcWidth - 4}
+            cy="5"
+            r="3"
+            stroke={props.color}
+            strokeWidth="2"
+            fill={props.color}
+          />
+          {circlesBase}
         </g>
       </svg>
     </div>

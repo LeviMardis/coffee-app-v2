@@ -3,30 +3,28 @@ import { Timer } from "./timer.js";
 import { Recipe } from "./recipe.js";
 import { Selector } from "./selector.js";
 import "../styles/card.css";
+import { Controls } from "./controls.js";
 
 export const Card = (props) => {
-  const cardRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const [cardStyle, setCardStyle] = useState({
     height: 100,
     marginBottom: -50,
     zIndex: props.index,
-    display: "block",
-    borderColor: props.data.color
+    borderColor: props.data.color,
   });
-  const [lock, setLock] = useState(
-    [{
-      color: "#2A3147"
-      },
-      {
-        margin: "20px 0px"
-      },
-      {
-        opacity: '100%'
-      }
-    ]
-  )
-  let currentHeight = window.innerHeight - 24
+  const [lock, setLock] = useState([
+    {
+      color: "#2A3147",
+    },
+    {
+      margin: "20px 0px",
+    },
+    {
+      opacity: "100%",
+    },
+  ]);
+  let currentHeight = window.innerHeight - 24;
 
   const handleStart = () => {
     setIsActive(true);
@@ -38,51 +36,61 @@ export const Card = (props) => {
     props.toggle(props.index);
   };
 
+
   useEffect(() => {
     if (props.currentIndex === props.index) {
-      setCardStyle({ ...cardStyle, height: currentHeight, marginBottom: 0 });
+      setCardStyle({ ...cardStyle, height: currentHeight, marginBottom: 0 }); // CURRENT CARD
     } else if (props.currentIndex === null) {
-      setCardStyle({ ...cardStyle, display: "block", height: 100, marginBottom: -50 });
+      setCardStyle({ ...cardStyle, height: 100, marginBottom: -50 }); // NO ACTIVE CARD
     } else if (props.currentIndex > props.index) {
-      setCardStyle({...cardStyle, marginBottom: -124 });
-    } else {
+      setCardStyle({ ...cardStyle, marginBottom: -124 }); // CARDS ABOVE
+    } else { // CARDS BELOW
       // setTimeout(() => {
       //   setCardStyle({...cardStyle, display: "none"})
       // }, 300)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.currentIndex]);
 
   useEffect(() => {
-    if (isActive) { // ACTIVE
+    if (isActive) {
+      // ACTIVE
       setLock([
         {
           color: "#13171F",
         },
         {
-          margin: "2px 0px"
+          margin: "2px 0px",
         },
         {
-          opacity: "0%"
-        }
+          opacity: "0%",
+        },
       ]);
-    } else { // NOT ACTIVE
+    } else {
+      // NOT ACTIVE
       setLock([
         {
           color: "#2A3147",
         },
         {
-          margin: "20px 0px"
+          margin: "20px 0px",
         },
         {
-          opacity: '100%'
-        }
+          opacity: "100%",
+        },
       ]);
     }
-  }, [isActive])
+  }, [isActive]);
+
+
+  document.styleSheets[0].insertRule(
+    `#slide${props.index}::-webkit-slider-thumb { border-color: ${props.data.color}; }`,
+    0
+  );
+  document.styleSheets[0].insertRule(`#slide${props.index}:active::-webkit-slider-thumb { background: ${props.data.color}; }`, 0);
   return (
-    <div ref={cardRef} className="cardContainer" style={cardStyle}>
-      <div onClick={handleToggle}>
+    <div className="cardContainer" style={cardStyle}>
+      <div onClick={handleToggle} className="container">
         <img src={props.data.icon} alt="" />
         <h1 style={{ color: props.data.color }}>{props.data.brewType}</h1>
       </div>
@@ -106,8 +114,9 @@ export const Card = (props) => {
           isActive={isActive}
           recipe={props.data.recipe}
         />
-        <button style={{ color: props.data.color, borderColor: props.data.color}} onClick={handleStart}>S</button>
-        <button style={{ color: props.data.color, borderColor: props.data.color}} onClick={handleReset}>R</button>
+      </div>
+      <div style={{ width: "100%" }}>
+        <Controls color={props.data.color} isActive={isActive} start={handleStart} reset={handleReset} index={props.index} />
       </div>
     </div>
   );

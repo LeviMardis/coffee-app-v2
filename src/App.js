@@ -21,7 +21,6 @@ function App() {
   let cards = data.map((item, index) => {
     return <Card data={item} key={index} index={index + 1} currentIndex={currentIndex} isOpen={isOpen} toggle={handleToggle} />;
   });
-console.log(data[0].icon)
   return <>{cards}</>;
 }
 
