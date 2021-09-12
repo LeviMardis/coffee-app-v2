@@ -7,7 +7,7 @@ export const Minimap = (props) => {
   const [animateFill, setAnimateFill] = useState({ animation: "none" })
   const [animateHide, setAnimateHide] = useState({ animation: "none" });
 
-  
+
   useEffect(() => {
     if (props.isActive) {
       setAnimateFill({ animation: `minimapFill ${props.time}s linear forwards` })
@@ -49,7 +49,7 @@ export const Minimap = (props) => {
   });
 
   return (
-    <div ref={ref} style={{ width: "60%" }}>
+    <div ref={ref} style={{ width: "100%" }}>
       <svg height="10px" width={calcWidth}>
         <g style={animateHide}>
           <path d={`m0 5 H ${calcWidth}`} stroke="#4C5980" strokeWidth="2" />
@@ -83,7 +83,7 @@ export const Minimap = (props) => {
             r="3"
             stroke={props.color}
             strokeWidth="2"
-            fill={props.color}
+            fill="#13171F"
           />
           <circle
             cx={calcWidth - 4}
@@ -91,7 +91,7 @@ export const Minimap = (props) => {
             r="3"
             stroke={props.color}
             strokeWidth="2"
-            fill={props.color}
+            fill="#13171F"
           />
           {circlesBase}
         </g>

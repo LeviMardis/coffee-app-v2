@@ -18,7 +18,7 @@ export const Card = (props) => {
       color: "#2A3147",
     },
     {
-      margin: "20px 0px",
+      margin: "16px 0px",
     },
     {
       opacity: "100%",
@@ -41,7 +41,7 @@ export const Card = (props) => {
     if (props.currentIndex === props.index) {
       setCardStyle({ ...cardStyle, height: currentHeight, marginBottom: 0 }); // CURRENT CARD
     } else if (props.currentIndex === null) {
-      setCardStyle({ ...cardStyle, height: 100, marginBottom: -50 }); // NO ACTIVE CARD
+      setCardStyle({ ...cardStyle, height: 70, marginBottom: -50 }); // NO ACTIVE CARD
     } else if (props.currentIndex > props.index) {
       setCardStyle({ ...cardStyle, marginBottom: -124 }); // CARDS ABOVE
     } else { // CARDS BELOW
@@ -60,7 +60,7 @@ export const Card = (props) => {
           color: "#13171F",
         },
         {
-          margin: "2px 0px",
+          margin: "6px 0px",
         },
         {
           opacity: "0%",
@@ -73,7 +73,7 @@ export const Card = (props) => {
           color: "#2A3147",
         },
         {
-          margin: "20px 0px",
+          margin: "16px 0px",
         },
         {
           opacity: "100%",
@@ -90,11 +90,11 @@ export const Card = (props) => {
   document.styleSheets[0].insertRule(`#slide${props.index}:active::-webkit-slider-thumb { background: ${props.data.color}; }`, 0);
   return (
     <div className="cardContainer" style={cardStyle}>
-      <div onClick={handleToggle} className="container">
+      <div onClick={handleToggle} className="section">
         <img src={props.data.icon} alt="" />
         <h1 style={{ color: props.data.color }}>{props.data.brewType}</h1>
       </div>
-      <div className="container">
+      <div className="section">
         <Selector
           coffee={props.data.settings[0]}
           ratio={props.data.settings[1]}
@@ -103,18 +103,22 @@ export const Card = (props) => {
           isActive={isActive}
           lock={lock}
         />
+        </div>
+        <div className="section">
         <Timer
           time={props.data.brewTime}
           color={props.data.color}
           isActive={isActive}
         />
+        </div>
+        <div className="section">
         <Recipe
           time={props.data.brewTime}
           color={props.data.color}
           isActive={isActive}
           recipe={props.data.recipe}
         />
-      </div>
+        </div>
       <div style={{ width: "100%" }}>
         <Controls color={props.data.color} isActive={isActive} start={handleStart} reset={handleReset} index={props.index} />
       </div>
