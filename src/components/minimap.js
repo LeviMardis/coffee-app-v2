@@ -83,7 +83,7 @@ export const Minimap = (props) => {
             r="3"
             stroke={props.color}
             strokeWidth="2"
-            fill={props.color}
+            fill="#0E0F12"
           />
           <circle
             cx={calcWidth - 4}
@@ -91,7 +91,7 @@ export const Minimap = (props) => {
             r="3"
             stroke={props.color}
             strokeWidth="2"
-            fill={props.color}
+            fill="#0E0F12"
           />
           {circlesBase}
         </g>

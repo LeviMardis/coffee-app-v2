@@ -10,6 +10,7 @@ export const Timer = (props) => {
     let interval = null;
     if (props.isActive) {
       interval = setInterval(() => {
+        props.addTime()
         if (seconds > 0) {
           setSeconds(seconds - 1);
         }
@@ -28,7 +29,8 @@ export const Timer = (props) => {
       setSeconds(time % 60)
     }
     return () => clearInterval(interval);
-  }, [props.isActive, seconds, minutes, time]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.isActive, seconds, minutes]);
 
   return (
 
