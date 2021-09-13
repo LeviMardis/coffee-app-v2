@@ -3,11 +3,9 @@
 
   --dark: #0e0f12;
   --medium: #13171f;
-  --light: #2A3147;
+  --light: #353E5A;
   --lighter: #556490;
 }
-
-
 body {
   overflow-x: hidden;
   overflow-y: visible;
@@ -26,7 +24,7 @@ h1 {
   letter-spacing: 2px;
   font-weight: normal;
   display: inline-block;
-  margin: 0px 0px 12px 20px;
+  margin: 0px 0px 0px 20px;
 }
 H2 {
   font-size: 16px;
@@ -42,14 +40,14 @@ H2 {
   overflow: hidden;
   position: relative;
   top: 0;
-  padding: 34px 36px;
+  padding: 36px 36px;
   transition: 0.2s linear;
-  display: flex;
   flex-flow: wrap row;
   justify-content: center;
 }
-.container {
+.section {
   width: 100%;
+  margin-bottom: 32px;
 }
 .flexContainer {
   display: flex;
@@ -78,6 +76,7 @@ H2 {
 }
 .selector p:nth-child(3)  {
   color: var(--white);
+  font-size: 22px;
 }
 button {
   width: 60px;
@@ -97,11 +96,11 @@ button:active{
 .minimapFill {
   clip-path: inset(-1px 100% -1px -1px)
 }
-@keyframes minimapFill {  
+@keyframes minimapFill {
   0% {clip-path: inset(-1px 100% -1px -1px)}
   100% {clip-path: inset(-1px)}
 }
-@keyframes minimapHide {  
+@keyframes minimapHide {
   0% {clip-path: inset(-1px)}
   100% {clip-path: inset(-1px -1px -1px 100%)}
 }
@@ -126,7 +125,6 @@ input[type=range]::-webkit-slider-thumb {
   height: 60px;
   width: 60px;
   border-radius: 10px;
-  background: url(../images/testicon.svg) no-repeat;
   -webkit-appearance: none;
   pointer-events: all;
   transition: all .2s linear;
