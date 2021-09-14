@@ -39,7 +39,6 @@ H2 {
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  top: 0;
   padding: 36px 36px;
   transition: 0.2s linear;
   flex-flow: wrap row;
@@ -92,7 +91,14 @@ button:active{
   color: var(--medium);
 }
 
-
+.recipeList p:first-child {
+  color: white;
+  transition: color .2s linear;
+}
+.animateRecipeScroll {
+  animation: recipeScroll .5s ease-in forwards;
+  color: #556490;
+}
 .minimapFill {
   clip-path: inset(-1px 100% -1px -1px)
 }
@@ -104,6 +110,11 @@ button:active{
   0% {clip-path: inset(-1px)}
   100% {clip-path: inset(-1px -1px -1px 100%)}
 }
+@keyframes recipeScroll {
+  0% {margin-top: 1em; opacity: 100%;}
+  100% {margin-top: -1em; opacity: 0%;}
+}
+
 
 
 input[type=range] {
@@ -127,5 +138,6 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 10px;
   -webkit-appearance: none;
   pointer-events: all;
+  background: none;
   transition: all .2s linear;
 }

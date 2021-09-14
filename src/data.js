@@ -6,8 +6,8 @@ export const data = [
     brewTime: 95, //Seconds
     settings: [15, 16], //Coffee, Ratio
     recipe: {
-      10: "instruction 1",
-      20: "instruction 2",
+      5: "instruction 1",
+      10: "instruction 2",
       40: "test",
       55: "test",
     },

@@ -8,8 +8,8 @@ export const Controls = (props) => {
 
 
   useEffect(() => {
-    slideRef.current.value = 0;
-  }, []);
+    if (!props.isActive){slideRef.current.value = 0;}
+  }, [props.isActive]);
 
   const animateStart = () => {
     slideRef.current.value = currentValue;
