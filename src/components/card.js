@@ -16,10 +16,10 @@ export const Card = (props) => {
 	});
 	const [lock, setLock] = useState([
 		{
-			color: "#2A3147",
+			color: "#353E5A",
 		},
 		{
-			margin: "16px 0px",
+			margin: "14px 0px",
 		},
 		{
 			opacity: "100%",
@@ -76,10 +76,10 @@ export const Card = (props) => {
 			// NOT ACTIVE
 			setLock([
 				{
-					color: "#2A3147",
+					color: "#353E5A",
 				},
 				{
-					margin: "16px 0px",
+					margin: "14px 0px",
 				},
 				{
 					opacity: "100%",

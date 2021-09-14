@@ -36,7 +36,7 @@ export const Timer = (props) => {
 
       <div className="flexContainer">
         <h2 style={{color:props.color}}>TIMER</h2>
-        <div style={{color: '#ded9d3', fontSize: '22px'}} className="flexContainerTimer">
+        <div className="flexContainerTimer">
           0{minutes}:{seconds < 10 ? "0" + seconds : seconds}
         </div>
       </div>

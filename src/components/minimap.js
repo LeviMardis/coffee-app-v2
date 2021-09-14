@@ -49,7 +49,7 @@ export const Minimap = (props) => {
   });
 
   return (
-    <div ref={ref} style={{ width: "100%" }}>
+    <div ref={ref} className="selector">
       <svg height="10px" width={calcWidth}>
         <g style={animateHide}>
           <path d={`m0 5 H ${calcWidth}`} stroke="#4C5980" strokeWidth="2" />

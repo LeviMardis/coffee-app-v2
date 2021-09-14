@@ -57,7 +57,7 @@ export const Selector = (props) => {
     <>
       <div className="flexContainer">
         <div>
-          <h2 style={{ color: props.color }}>COFFEE</h2>
+          <h2 style={{ color: props.color }}>COFFEE</h2><h6>GRAMS</h6>
         </div>
         <div
           onTouchStart={setStart}
@@ -103,7 +103,7 @@ export const Selector = (props) => {
       </div>
       <div className="flexContainer">
         <div>
-          <h2 style={{ color: props.color }}>RATIO</h2>
+          <h2 style={{ color: props.color }}>RATIO</h2><h6>COFFEE:WATER</h6>
         </div>
         <div
           onTouchStart={setStart}
@@ -149,7 +149,7 @@ export const Selector = (props) => {
       </div>
       <div className="flexContainer">
         <div>
-          <h2 style={{ color: props.color }}>WATER</h2>
+          <h2 style={{ color: props.color }}>WATER</h2><h6>GRAMS</h6>
         </div>
         <div
           onTouchStart={setStart}
