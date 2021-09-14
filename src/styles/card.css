@@ -32,7 +32,13 @@ H2 {
   font-weight: normal;
   margin: 0px;
 }
-
+H6 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  margin: 0px;
+  color: var(--light)
+}
 .cardContainer {
   background-color: var(--medium);
   border: 2px solid;
@@ -58,6 +64,8 @@ H2 {
   align-items: center;
   justify-content: center;
   width: 60%;
+  color: #ded9d3;
+  font-size: 22px;
 }
 .selector {
   display: flex;
@@ -75,7 +83,7 @@ H2 {
 }
 .selector p:nth-child(3)  {
   color: var(--white);
-  font-size: 22px;
+  font-size: 20px;
 }
 button {
   width: 60px;
