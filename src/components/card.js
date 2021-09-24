@@ -112,25 +112,27 @@ export const Card = (props) => {
 					addTime={handleTime}
 				/>
 			</div>
-			<div className="section">
-				<Recipe
-					time={props.data.brewTime}
-					color={props.data.color}
-					isActive={isActive}
-					recipe={props.data.recipe}
-          currentTime={currentTime}
-          cardIndex={props.index}
-				/>
-			</div>
-			<div style={{ width: "100%" }}>
-				<Controls
-					color={props.data.color}
-					isActive={isActive}
-					start={handleStart}
-					reset={handleReset}
-					index={props.index}
-				/>
-			</div>
+
+  			<div className="section">
+  				<Recipe
+  					time={props.data.brewTime}
+  					color={props.data.color}
+  					isActive={isActive}
+  					recipe={props.data.recipe}
+            currentTime={currentTime}
+            cardIndex={props.index}
+  				/>
+  			</div>
+  			<div className="slider">
+  				<Controls
+  					color={props.data.color}
+  					isActive={isActive}
+  					start={handleStart}
+  					reset={handleReset}
+  					index={props.index}
+  				/>
+  			</div>
+
 		</div>
 	);
 };

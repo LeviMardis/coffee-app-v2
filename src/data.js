@@ -6,10 +6,13 @@ export const data = [
     brewTime: 95, //Seconds
     settings: [15, 16], //Coffee, Ratio
     recipe: {
-      5: "instruction 1",
-      10: "instruction 2",
-      40: "test",
-      55: "test",
+      5: "Rinse Kalita filter",
+      10: "Add coffee (grind size should be the consistency of table salt)",
+      20: "Gently pour 50g of water just off boil onto the coffee.",
+      46: "Wait 20 seconds",
+      60: "Begin series of five - 25g pulse pours every 10 seconds.",
+      70: "Continue second series of six 20g pulse pours in center of bed at 10 second intervals for 1 minute until 285g",
+      80: "Finish pouring with 20g pour ~2:10 seconds, sinking any remaining crust from bloom. Draw down should take 20-30 seconds.",
     },
   },
   {
